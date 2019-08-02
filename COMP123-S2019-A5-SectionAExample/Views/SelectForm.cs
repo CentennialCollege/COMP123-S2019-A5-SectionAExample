@@ -19,21 +19,7 @@ namespace COMP123_S2019_A5_SectionAExample.Views
             InitializeComponent();
         }
 
-        public bool HasLoadedDataSource()
-        {
-            using (var db = new DollarComputersContext())
-            {
-                db.products.Load();
-                productBindingSource.DataSource = db.products.Local.ToBindingList();
-                if(productBindingSource.DataSource != null)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
+      
         private void SelectForm_Load(object sender, EventArgs e)
         {
            if(!HasLoadedDataSource())
@@ -47,5 +33,12 @@ namespace COMP123_S2019_A5_SectionAExample.Views
         {
             Application.Exit();
         }
+
+        private void ProductDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            SelectLabel.Text = ProductDataGridViewSelectedItem();
+        }
+
+        
     }
 }

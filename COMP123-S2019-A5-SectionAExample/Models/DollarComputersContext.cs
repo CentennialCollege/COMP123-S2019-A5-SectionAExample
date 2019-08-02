@@ -18,7 +18,7 @@ namespace COMP123_S2019_A5_SectionAExample.Models
         {
             modelBuilder.Entity<Product>()
                 .Property(e => e.cost)
-                .HasPrecision(19, 4);
+                .HasPrecision(19, 2);
         }
     }
 }

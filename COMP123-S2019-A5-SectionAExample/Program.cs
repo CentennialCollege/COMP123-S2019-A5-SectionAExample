@@ -39,7 +39,7 @@ namespace COMP123_S2019_A5_SectionAExample
 
             product = new Product();
 
-            Application.Run(orderForm);
+            Application.Run(selectForm);
         }
     }
 }
